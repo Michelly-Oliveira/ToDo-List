@@ -87,7 +87,7 @@ function populateList(list = [], todoList) {
 }
 
 function toggleDone(e) {
-    // Check if we clicked on an input, not on the li
+    // Check if we clicked on an input, not on the ul
 
     const element = e.target;
 
@@ -98,7 +98,6 @@ function toggleDone(e) {
 
     if(element.matches('i') || element.matches('span')) {
         // Pass the item we clicked on
-        // (element.parentNode) = span, .parentNode = label, .parentNode = li
         deleteItem(element.parentNode);
         return;
     }
@@ -138,7 +137,7 @@ function toggleDone(e) {
 
 function deleteItem(e) {
     const index = e.dataset.index;
-    console.log(index,e)
+    
     // Delete the selected item
     itemsList.splice(index, 1);
 
