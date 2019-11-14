@@ -123,7 +123,7 @@ span {
   position: absolute;
   right: 5px;
   top: 0px;
-  display: none;
+  opacity: 0;
   cursor: pointer;
 }
 
@@ -133,7 +133,7 @@ span {
 
 /* when we hover on the li, show the 'btn'; hover on the parent, display child */
 li:hover span {
-  display: block;
+  opacity: 1;
 }
 
 @media (max-width: 600px) {
