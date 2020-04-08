@@ -2,22 +2,20 @@
 
 body {
   /* width and height include content,padding,borders */
+  background: url('../img/rdr2 - 1.jpg');
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
   box-sizing: border-box;
   font-family: 'Indie Flower', cursive, sans-serif;
   font-size: 16px;
   color: #333;
-  padding: 0;
-  margin: 0;
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: url('img/rdr2 - 1.jpg');
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover;
   overflow: hidden;
 }
 
@@ -36,7 +34,6 @@ body {
 .date h2 {
   font-size: 2rem;
   letter-spacing: 3px;
-  font-weight: bold;
 }
 
 /* Form */
@@ -47,7 +44,7 @@ body {
   flex-direction: column;
 }
 
-input[type='text'] {
+.text {
   width: 300px;
   border-radius: 5px;
   border: none;
@@ -57,10 +54,12 @@ input[type='text'] {
   color: #333;
 }
 
-input[type='submit'] {
+.btn {
   width: 120px;
   background: transparent;
   border: none;
+  font-size: 1em;
+  border-radius: 5px;
   padding: 10px 15px;
   margin: 5px 0 20px;
   cursor: pointer;
@@ -68,43 +67,29 @@ input[type='submit'] {
   color: #f4f4f4;
 }
 
-input[type='submit']:hover {
+.btn:hover {
   transform: scale(1.2);
   color: #333;
+  background: #f4f4f4;
 }
 
-input[type='submit']:focus,
-input[type='text']:focus {
+.btn:focus,
+.text:focus {
   outline: none;
 }
 
-/* to-do */
+/* to-do container */
 .todos {
   list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   margin: 0 auto;
-  max-height: 500px;
-  overflow: hidden;
-}
-
-.todos:hover {
+  height: 550px;
+  width: 500px;
   overflow-y: auto;
 }
 
 ::-webkit-scrollbar {
   display: none;
-  /* background: transparent;
-    width: 5px;
-    border-radius: 10px; */
 }
-
-/* ::-webkit-scrollbar-thumb {
-    background-color: #333;
-    border-radius: 10px;
-} */
 
 li {
   margin: 5px 0px 10px -40px;
@@ -113,25 +98,28 @@ li {
   font-size: 1.5rem;
   color: #f4f4f4;
   position: relative;
-  width: 500px;
   word-break: break-word;
+  border-radius: 5px;
+  background: rgba(51, 51, 51, 0.438);
 }
 
 input:checked + label {
   text-decoration: line-through;
 }
 
+/* X Icon */
 span {
   color: #f4f4f4;
   font-size: 1rem;
-  padding: 0 10px;
+  padding: 10px;
   position: absolute;
-  right: 5px;
+  right: 0px;
   top: 0px;
   opacity: 0;
   cursor: pointer;
 }
 
+/* Shadow for the X icon */
 .shadow {
   filter: drop-shadow(0 0 0.3rem rgb(0, 0, 0));
 }
@@ -146,27 +134,35 @@ li:hover span {
     width: 250px;
   }
 
-  input[type='submit'] {
+  .btn {
     cursor: default;
     transition: none;
+    color: #333;
+    background: #f4f4f4;
   }
 
   .todos {
-    width: 90%;
-    padding-left: 0px;
+    width: 80%;
   }
 
   li {
-    margin: 0;
     letter-spacing: 1px;
     font-size: 1.3rem;
-    padding: 10px 0;
+  }
+
+  /* Show icon without the need to hover over it */
+  span {
+    opacity: 1;
   }
 }
 
-@media (max-height: 600px) {
+@media (max-height: 700px) {
   .date {
-    padding: 1rem;
-    margin: 0;
+    display: none;
+  }
+
+  .btn {
+    color: #333;
+    transition: none;
   }
 }
