@@ -135,10 +135,13 @@ li:hover span {
   }
 
   .btn {
-    cursor: default;
     transition: none;
     color: #333;
     background: #f4f4f4;
+  }
+
+  .btn:hover {
+    transform: scale(1);
   }
 
   .todos {
